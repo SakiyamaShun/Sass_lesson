@@ -1,0 +1,52 @@
+@use 'variable' as v;
+
+// ----headerの設定---- //
+@mixin hp_size() {
+  height: 40px;
+  width: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.hp_child {
+  @include hp_size();
+  @each $name, $color, $marginName, $marginLeft, $marginRight in zip(v.$classNames, v.$buttonColor, v.$marginSize, v.$left, v.$right) {
+    &__#{$name} {
+      background-color: $color;
+    }
+
+    &__#{$marginName} {
+      margin-left: $marginLeft;
+      margin-right: $marginRight;
+    }
+  }
+}
+
+// ---mainの記述--- //
+@mixin mpp_color() {
+  background-color: v.$white;
+  display:flex;
+}
+.main_parts_padding_color {
+  @include mpp_color();
+}
+
+@mixin m_bottom {
+  margin-bottom: 10px;
+}
+.bottom {
+  @include m_bottom();
+}
+
+@mixin mp_size() {
+  height: 40px;
+  width: 140px;
+  margin: 5px
+}
+.main_parts {
+  @include mp_size();
+  @each $name, $color in zip(v.$classNames, v.$buttonColor) {
+    &__#{$name} {
+      background-color: $color;
+    }
+  }
+}
