@@ -1,0 +1,53 @@
+@use 'variable' as v;
+// ----headerの設定---- //
+.header {
+  height: 100px;
+  width: 400px;
+  background-color: v.$navy ;
+}
+
+.header_parts_parent {
+  padding-top: 20px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: end;
+}
+
+.header_parts {
+  background-color: v.$white;
+  display: flex;
+}
+
+// ----sidebarの設定---- //
+.flex {
+  display: flex;
+  width: 400px;
+}
+
+.sidebar {
+  height: 250px;
+  width: 150px;
+  background-color: v.$green ;
+
+}
+
+// ----mainの設定---- //
+.main {
+  height: 250px;
+  width: 250px;
+  background-color: v.$red ;
+}
+
+.main_parts_parent {
+  padding-top: 40px;
+  padding-left: 40px;
+  display: inline-block;
+}
+
+
+// ----footerの設定---- //
+.footer {
+  height: 100px;
+  width: 400px;
+  background-color: v.$brown ;
+}
